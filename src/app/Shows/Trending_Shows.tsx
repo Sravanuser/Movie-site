@@ -1,4 +1,4 @@
-import {TrendingShows} from "../utils/request";
+import { TrendingShows } from "../utils/request";
 
 export default async function Trending_Shows() {
     let ball = await TrendingShows();
