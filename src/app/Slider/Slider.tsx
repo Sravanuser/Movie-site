@@ -4,7 +4,7 @@ import { useState } from "react";
 import { TrendingMovies } from "../utils/request";
 import { CiPlay1 } from "react-icons/ci";
 
-export default function page() {
+export default function Slider() {
   const [movies, setmovies] = useState([]);
   const [slide, setslide] = useState(0);
   useEffect(() => {
