@@ -29,13 +29,8 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center w-full h-16 px-4 text-white bg-slate-950 nav absolute z-50">
       <div>
-          <Link
-            className="link-underline link-underline-black"
-            href=""
-          >
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLaw6rDHncQj0ssCctL4MeE68_pklOSvQ7qclpt7GUO3oeKo&s" alt="images" width={85} height={85} className="bg-blend-color-darken">
         </img>
-          </Link>
       </div>
      {show ? <ul className="hidden md:flex">
         {links.map(({ id, link }) => (
@@ -43,7 +38,7 @@ const Navbar = () => {
             key={id}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-blue-500 duration-200 link-underline"
           >
-            <Link href={link}>{link}</Link>
+            <Link href="/">{link}</Link>
           </li>
         ))}
       </ul>

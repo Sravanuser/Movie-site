@@ -11,7 +11,7 @@ export default async function Trending_Movies() {
           return(
             <div key={id}>
                 <div className="w-40 h-40 md:w-60 md:h-60">
-                <img className="w-40 h-40 md:h-60 md:w-60 rounded-md" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images"/>
+                <img className="w-40 h-40 md:h-60 md:w-60 rounded-md hover:contrast-125 contrast-75 duration:200" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images"/>
                 </div>
             </div>
           )  
