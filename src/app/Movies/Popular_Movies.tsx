@@ -3,7 +3,7 @@ import {Popular} from "../utils/request";
 export default async function Popular_Movies() {
     let ball = await Popular();
   return (
-    <div className="bg-black">
+    <div className="bg-black overflow-hidden">
       <h1 className="text-red-500 text-md pt-2 ml-6 md:text-xl font-semibold md">Popular Movies</h1>
     <div className="w-screen flex md:gap-6 gap:1 Trending ml-1 mt-2">
       {
