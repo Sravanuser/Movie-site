@@ -22,6 +22,10 @@
       "@/*": ["./src/*"]
     }
   },
+<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+=======
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/types/app/Movies/TrendingMovies/page.tsx"],
+>>>>>>> 747dafa (second commit)
   "exclude": ["node_modules"]
 }

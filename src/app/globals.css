@@ -25,8 +25,27 @@
     z-index: 1;
     top: 0;
     left: 0;
+<<<<<<< HEAD
     background: rgba(0,0,0,0.786);
 }
 .images-hidden{
     display: none;
+=======
+    background: rgba(0,0,0,0.686);
+}
+.images-hidden{
+    display: none;
+}
+.Trending{
+    overflow: scroll;
+}
+*::-webkit-scrollbar{
+width: 0px;
+}
+*::-webkit-scrollbar-track{
+background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+background-color: transparent;
+>>>>>>> 747dafa (second commit)
 }

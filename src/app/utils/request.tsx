@@ -32,6 +32,14 @@ export const TopRated = async() => {
     const data = await res.json();
     return data.results;
 }
+<<<<<<< HEAD
+=======
+export const TrendingShows = async() => {
+    const res = await fetch(`${BASE_URL}/trending/tv/day?language=en-US&api_key=${API_KEY}`);
+    const data = await res.json();
+    return data.results;
+}
+>>>>>>> 747dafa (second commit)
 
 export const MovieDetails = async(id:string) => {
     const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
@@ -43,4 +51,12 @@ export const SimilarMovies = async(id:string) => {
     const res = await fetch(`${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}`);
     const data = await res.json();
     return data.results;
+<<<<<<< HEAD
+=======
+}
+export const Popular = async() => {
+    const res = await fetch(`${BASE_URL}/list/8280176-latest-movies?api_key=${API_KEY}`);
+    const data = await res.json();
+    return data.items;
+>>>>>>> 747dafa (second commit)
 }
