@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
+import { useState } from "react";
 import { TrendingMovies } from "../utils/request";
 import { CiPlay1 } from "react-icons/ci";
 
 export default function page() {
-  const [movies, setmovies] = React.useState([]);
-  const [slide, setslide] = React.useState(0);
+  const [movies, setmovies] = useState([]);
+  const [slide, setslide] = useState(0);
   useEffect(() => {
     async function data() {
       let all = await TrendingMovies();
