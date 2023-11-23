@@ -9,20 +9,20 @@ const Navbar = () => {
     const [show, setshow] = useState(true);
   const links = [
     {
-      id: 1,
+      path:"/",
       link: "home",
     },
     {
-      id: 2,
+      path:"/movies",
       link: "movies",
     },
     {
-      id: 3,
+      path:"/shows",
       link: "shows",
     },
     {
-      id: 4,
-      link: "Register",
+      path:"/Register",
+      link: "register",
     }
   ];
 
@@ -33,12 +33,12 @@ const Navbar = () => {
         </img>
       </div>
      {show ? <ul className="hidden md:flex">
-        {links.map(({ id, link }) => (
+        {links.map(( link, index ) => (
           <li
-            key={id}
+            key={index}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-blue-500 duration-200 link-underline"
           >
-            <Link href="/">{link}</Link>
+            <Link href={link.path}>{link.link}</Link>
           </li>
         ))}
       </ul>
@@ -59,13 +59,13 @@ const Navbar = () => {
 
       {nav && (
         <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          {links.map(({ id, link }) => (
+          {links.map(( link, index ) => (
             <li
-              key={id}
+              key={index}
               className="px-4 cursor-pointer capitalize py-6 text-3xl"
             >
-              <Link onClick={() => setNav(!nav)} href={link}>
-                {link}
+              <Link onClick={() => setNav(!nav)} href={link.path}>
+                {link.link}
               </Link>
             </li>
           ))}

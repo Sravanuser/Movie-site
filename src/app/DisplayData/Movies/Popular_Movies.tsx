@@ -1,13 +1,13 @@
-import {Popular} from "../../utils/request";
+import { Popular} from "../../utils/request";
 
 export default async function Popular_Movies() {
-    let ball = await Popular();
+    let PopularData = await Popular();
   return (
     <div className="bg-black overflow-hidden">
       <h1 className="text-red-500 text-md pt-2 ml-6 md:text-xl font-semibold md">Popular Movies</h1>
     <div className="w-screen flex md:gap-6 gap-1 Trending ml-1 mt-2">
       {
-        ball.map((item:any,id:number)=>{
+        PopularData.map((item:any,id:number)=>{
           return(
             <div key={id}>
                 <div className="w-40 h-40 md:w-60 md:h-60">
