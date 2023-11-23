@@ -2,7 +2,7 @@
 import React,{ useState } from 'react'
 import Link from 'next/link';
 
-export default function page() {
+export default function Page() {
   const [Login, setLogin] = useState(true);
   function handleChange(){
     setLogin(!Login);
