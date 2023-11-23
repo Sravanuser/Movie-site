@@ -1,4 +1,4 @@
-import {TrendingMovies} from "../utils/request";
+import {TrendingMovies} from "../../utils/request";
 
 export default async function Trending_Movies() {
     let Trending = await TrendingMovies();

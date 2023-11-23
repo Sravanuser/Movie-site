@@ -1,4 +1,4 @@
-import { TopRated } from "../utils/request";
+import { TopRated } from "../../utils/request";
 
 export default async function TopRated_Shows() {
     let ShowsData = await TopRated();

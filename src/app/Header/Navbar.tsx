@@ -14,7 +14,7 @@ const Navbar = () => {
     },
     {
       id: 2,
-      link: "trending",
+      link: "movies",
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ const Navbar = () => {
     },
     {
       id: 4,
-      link: "movies",
+      link: "Register",
     }
   ];
 

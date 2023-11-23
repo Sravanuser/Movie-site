@@ -1,4 +1,4 @@
-import {Popular} from "../utils/request";
+import {Popular} from "../../utils/request";
 
 export default async function Popular_Movies() {
     let ball = await Popular();

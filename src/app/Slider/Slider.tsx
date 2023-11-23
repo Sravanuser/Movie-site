@@ -3,14 +3,22 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { TrendingMovies } from "../utils/request";
 import { CiPlay1 } from "react-icons/ci";
+import Loading from "./Loading";
 
 export default function Slider() {
   const [movies, setmovies] = useState([]);
   const [slide, setslide] = useState(0);
+  const [loading, setloading] = useState(true);
   useEffect(() => {
     async function data() {
+      try{
       let all = await TrendingMovies();
       setmovies(all);
+      }catch(error){
+        console.error("error fetching data",error);
+      }finally{
+        setloading(false);
+      }
     }
     data();
   }, []);
@@ -26,7 +34,8 @@ export default function Slider() {
     };
   }, [slide]);
   return (
-    <div className="min-width=[100vw]">
+    <>
+    {loading ? <Loading/> : (<div className="min-width=[100vw]">
       {movies.map((item: any, id: number) => {
         return (
           <div
@@ -65,6 +74,8 @@ export default function Slider() {
           </div>
         );
       })}
-    </div>
+    </div>)
+  }
+  </>
   );
 }
