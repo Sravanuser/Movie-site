@@ -1,7 +1,7 @@
 
 export default function loading() {
   return (
-  <div className= "slide" style={{background: "#10171E"}}>
+  <div className= "slide fixed" style={{background: "#10171E"}}>
   <div className="w-screen h-screen flex justify-center items-center flex-col gap-6 md:items-start md:ml-20">
   <div className="bg-neutral-600 h-[200px] w-[200px]">
   </div>

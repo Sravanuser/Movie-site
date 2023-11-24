@@ -4,6 +4,7 @@ import { useState } from "react";
 import { TrendingMovies } from "../utils/request";
 import { CiPlay1 } from "react-icons/ci";
 import Loading from "./Loading";
+import Image from "next/image";
 
 export default function Slider() {
   const [movies, setmovies] = useState([]);
@@ -48,10 +49,10 @@ export default function Slider() {
           >
             <div className="h-screen w-screen flex flex-col items-center justify-center md:items-start md:justify-center md:ml-20 gap-3">
               <div className="h-[200px] w-[200px] relative z-10">
-                <img
+                <Image
                   className="h-full w-full rounded-lg"
                   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
-                  alt="images"
+                  alt="images" width={200} height={200}
                 />
               </div>
               <div className="text-white text-center md:text-start z-10 flex flex-col gap-1.5 md:w-1/2">

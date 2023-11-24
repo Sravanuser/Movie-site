@@ -1,4 +1,6 @@
 import { TrendingShows } from "../../utils/request";
+import Image from "next/image";
+
 
 export default async function Trending_Shows() {
     let ShowsData = await TrendingShows();
@@ -11,7 +13,7 @@ export default async function Trending_Shows() {
           return(
             <div key={id}>
                 <div className="w-40 h-40 md:w-60 md:h-60">
-                <img className="w-40 h-40 md:h-60 md:w-60 rounded-md contrast-75 hover:contrast-125 duration:200" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images"/>
+                <Image className="w-40 h-40 md:h-60 md:w-60 rounded-md contrast-75 hover:contrast-125 duration:200" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images" height={200} width={200}/>
                 </div>
             </div>
           )  

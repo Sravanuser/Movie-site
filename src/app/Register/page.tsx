@@ -17,11 +17,11 @@ export default function Page() {
                 <div className='w-full flex flex-col justify-center items-center gap-6'>
                     <div className='h-8 w-[75%] mt-6'>
                         <p>username</p>
-                        <input type="text" className='h-full w-full text-center border-[1px] border-solid border-black' required placeholder='Username'/>
+                        <input type="text" className='text-black h-full w-full text-center border-[1px] border-solid border-black' required placeholder='Username'/>
                     </div>
                     <div className='h-8 w-[75%]'>
                         <p>password</p>
-                        <input type="password" required className='h-full w-full text-center border-[1px] border-solid border-black'/>
+                        <input type="password" required className='text-black h-full w-full text-center border-[1px] border-solid border-black'/>
                     </div>
                         <button className='flex justify-center items-center border-2 outline-none border-none h-8 bg-blue-500 rounded-none mt-4'>Login</button>
                     <div>
