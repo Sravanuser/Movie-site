@@ -5,7 +5,7 @@ import { Thirdpage } from "@/app/utils/request";
 import { useState } from "react";
 import  { useEffect } from "react";
 
-export default function page() {
+export default function Page() {
   const [data, setdata] = useState<any[]>([]);  
   useEffect(()=>{
     async function FetchData(){
