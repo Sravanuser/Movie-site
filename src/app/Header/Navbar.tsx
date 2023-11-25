@@ -10,24 +10,24 @@ const Navbar = () => {
   const links = [
     {
       path:"/",
-      link: "home",
+      link: "Home",
     },
     {
-      path:"/movies",
-      link: "movies",
+      path:"/Movies",
+      link: "Movies",
     },
     {
-      path:"/shows",
-      link: "shows",
+      path:"/Shows",
+      link: "Shows",
     },
     {
       path:"/Register",
-      link: "register",
+      link: "Register",
     }
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-16 px-4 text-white bg-slate-950 nav absolute z-50">
+    <div className="flex justify-between items-center w-full h-16 px-4 text-white bg-slate-950 nav fixed z-50 top-0">
       <div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLaw6rDHncQj0ssCctL4MeE68_pklOSvQ7qclpt7GUO3oeKo&s" alt="images" width={85} height={85} className="bg-blend-color-darken">
         </img>

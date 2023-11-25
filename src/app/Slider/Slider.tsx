@@ -34,6 +34,7 @@ export default function Slider() {
       clearInterval(interval);
     };
   }, [slide]);
+  console.log(movies,slide);
   return (
     <>
     {loading ? <Loading/> : (<div className="min-width=[100vw]">
