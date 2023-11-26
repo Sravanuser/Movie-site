@@ -1,14 +1,15 @@
 "use client";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { TrendingMovies } from "../utils/request";
+import { TrendingMovies } from "../../utils/request";
 import { CiPlay1 } from "react-icons/ci";
 import Loading from "./Loading";
 import Image from "next/image";
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from "react-responsive-carousel";
 
 export default function Slider() {
   const [movies, setmovies] = useState([]);
-  const [slide, setslide] = useState(0);
   const [loading, setloading] = useState(true);
   useEffect(() => {
     async function data() {
@@ -23,26 +24,22 @@ export default function Slider() {
     }
     data();
   }, []);
-  const nextSlide = () => {
-    setslide(slide === movies.length - 1 ? 0 : slide + 1);
-  };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 9800);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [slide]);
-  console.log(movies,slide);
   return (
     <>
-    {loading ? <Loading/> : (<div className="min-width=[100vw]">
+    {loading ? <Loading/> : (
+    <div className="">
+      <Carousel 
+      showThumbs={false}
+      autoPlay={false}
+      transitionTime={3}
+      infiniteLoop={true}
+      showStatus={false}
+      showIndicators={false}
+    >
       {movies.map((item: any, id: number) => {
         return (
           <div
             key={id}
-            className={slide === id ? "slide" : "images images-hidden"}
             style={{
               background: `transparent url(https://image.tmdb.org/t/p/w500/${item.poster_path}) no-repeat center center`,
               backgroundSize: "100% 100%",
@@ -53,14 +50,14 @@ export default function Slider() {
                 <Image
                   className="h-full w-full rounded-lg"
                   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
-                  alt="images" width={200} height={200}
+                  alt="images" width={200} height={200} priority={true}
                 />
               </div>
               <div className="text-white text-center md:text-start z-10 flex flex-col gap-1.5 md:w-1/2">
                 <h1 className="font-semibold text-2xl md:text-4xl text-blue-200">
                   {item.title}
                 </h1>
-                <h2 className="text-md md:text-lg px-2 md:px-0">
+                <h2 className="text-sm md:text-md px-2 md:px-0">
                   {item.overview}
                 </h2>
               </div>
@@ -76,6 +73,7 @@ export default function Slider() {
           </div>
         );
       })}
+      </Carousel>
     </div>)
   }
   </>

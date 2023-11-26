@@ -65,8 +65,3 @@ export const Secondpage = async() => {
     const data = await res.json();
     return data.items;
 }
-export const Thirdpage = async() => {
-    const res = await fetch(`${BASE_URL}/list/8280921-movie-list?api_key=${API_KEY}&page=3`);
-    const data = await res.json();
-    return data.items;
-}

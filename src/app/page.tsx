@@ -1,15 +1,15 @@
 import dynamic from "next/dynamic";
-import  Trending_Movies  from "./DisplayData/Movie/Trending_Movies";
-import  Popular_Movies  from "./DisplayData/Movie/Popular_Movies";
-import  Trending_Shows  from "./DisplayData/Shows/Trending_Shows";
-import  TopRated_Shows  from "./DisplayData/Shows/TopRated_Shows";
-const ServerComponent = dynamic(() => import('./Slider/Slider'));
+import Carousel from "./DisplayData/Slider/Slider";
+const Trending_Movies = dynamic(() => import("./DisplayData/Movie/Trending_Movies"));
+const Popular_Movies = dynamic(() => import("./DisplayData/Movie/Popular_Movies"));
+const Trending_Shows = dynamic(() => import("./DisplayData/Show/Trending_Shows"));
+const TopRated_Shows = dynamic(() => import("./DisplayData/Show/TopRated_Shows"));
 
 
 export default async function Home() {
   return (
     <div>
-      <ServerComponent/>   
+      <Carousel/>   
       <Trending_Movies/>   
       <Popular_Movies/>   
       <Trending_Shows/>   
