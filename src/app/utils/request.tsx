@@ -6,22 +6,7 @@ export const TrendingMovies = async() =>{
     const data = await res.json();
     return data.results;
 }
-type MovieList = {
-  page: number;
-  results:Array<
-    {
-      backdrop_path:string;
-      genre_ids: number[];
-      id: number;
-      original_language: string,
-      overview: string;
-      popularity: number;
-      poster_path: string;
-      release_date: string;
-      name: string;
-}>
-}
-export const GetMovies = async(query:string):Promise<MovieList["results"]>=> {
+export const GetMovies = async(query:string) => {
     const res = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`)
     const data = await res.json();
     return data.results;
@@ -42,7 +27,7 @@ export const TrendingShows = async() => {
 export const MovieDetails = async(id:string) => {
     const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
     const data = await res.json();
-    return data.results;
+    return data;
 }
 
 export const SimilarMovies = async(id:string) => {

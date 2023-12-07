@@ -7,10 +7,20 @@ import Loading from "./Loading";
 import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel";
+import { MdPlaylistAddCircle } from "react-icons/md";
+import Link from "next/link";
+
 
 export default function Slider() {
   const [movies, setmovies] = useState([]);
   const [loading, setloading] = useState(true);
+  interface sliderData{
+    title : string;
+    id : number;
+    overview : string;
+    backdrop_path : string;
+    poster_path : string;
+  }
   useEffect(() => {
     async function data() {
       try{
@@ -27,7 +37,7 @@ export default function Slider() {
   return (
     <>
     {loading ? <Loading/> : (
-    <div className="">
+    <div>
       <Carousel 
       showThumbs={false}
       autoPlay={false}
@@ -36,7 +46,7 @@ export default function Slider() {
       showStatus={false}
       showIndicators={false}
     >
-      {movies.map((item: any, id: number) => {
+      {movies.map((item:sliderData, id: number) => {
         return (
           <div
             key={id}
@@ -45,10 +55,11 @@ export default function Slider() {
               backgroundSize: "100% 100%",
             }}
           >
-            <div className="h-screen w-screen flex flex-col items-center justify-center md:items-start md:justify-center md:ml-20 gap-3">
+            <Link href={`Trending/${item.id}`}>
+            <div className="h-screen w-screen flex flex-col items-center justify-center md:items-start md:justify-center md:ml-20 gap-3 images">
               <div className="h-[200px] w-[200px] relative z-10">
                 <Image
-                  className="h-full w-full rounded-lg"
+                  className="h-full w-full rounded-lg brightness-125"
                   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
                   alt="images" width={200} height={200} priority={true}
                 />
@@ -62,17 +73,20 @@ export default function Slider() {
                 </h2>
               </div>
               <div className="z-10 text-white flex gap-6 mt-2">
-                <button className="flex justify-center items-center border-2 border-solid bg-white">
-                  <CiPlay1 color="skyblue" className="play" size={25} />
+              <button className="flex justify-center items-center border-2 border-solid bg-white hover:rounded-xl duration-200 md:h-9 md:w-20">
+                  <CiPlay1 color="red" className="play" size={25} />
                 </button>
-                <button className="border-2 border-solid text-sky-200 font-medium hover:bg-white duration-200">
-                  Watchlist
+                <button className="flex justify-center items-center border-2 border-solid bg-white hover:rounded-xl duration-200 md:h-9 md:w-20">
+                <MdPlaylistAddCircle color="red" className="play" size={25} />
                 </button>
               </div>
             </div>
+      </Link>
           </div>
         );
-      })}
+      }
+      )
+      }
       </Carousel>
     </div>)
   }
