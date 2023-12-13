@@ -17,7 +17,7 @@ export default async function TopRated_Shows() {
         ShowsData.map((item:TopRatedItem,id:number)=>{
           return(
             <div key={id}>
-              <Link href={`/TopRated/${item.id}`}>
+              <Link href={`/TvShowsData/TopRated/${item.id}`}>
                 <div className="w-40 h-40 md:w-60 md:h-60">
                 <Image className="w-40 h-40 md:h-60 md:w-60 rounded-md contrast-75 hover:contrast-125 duration:200" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images" height={200} width={200}/>
                 </div>

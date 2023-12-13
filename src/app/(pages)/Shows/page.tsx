@@ -22,7 +22,7 @@ export default async function page() {
           {ShowsData.map((item, id: number) => {
             return (
               <div key={id} className="m-0 p-0">
-                <Link href={`/Shows/${item.id}`}>
+                <Link href={`/TvShowsData/Showdetails/${item.id}`}>
                 <div>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}

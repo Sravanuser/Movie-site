@@ -1,10 +1,9 @@
 import React from 'react'
 import { MovieDetails } from '@/app/utils/request'
 import { CiPlay1 } from "react-icons/ci";
-import { MdPlaylistAddCircle } from "react-icons/md";
-import Image from 'next/image';
+import { MdPlaylistAddCircle } from "react-icons/md"
 import { SimilarMovies } from '@/app/utils/request';
-
+import Link from 'next/link';
 interface params{
   params : {
   cateogery : string;
@@ -15,11 +14,13 @@ interface Genres{
   name:string,
   id:number
 }
+interface similar{
+  poster_path:string;
+  id:number;
+}
 export default async function MovieDetail({params:params}:params) {
   const ShowMovieData = await MovieDetails(params.slug);
   const SimilarMoviesData = await SimilarMovies(params.slug);
-  console.log(SimilarMoviesData);
-  
   let modifiedDate = ShowMovieData.release_date.slice(0,-6);
   return (
     <div>
@@ -62,17 +63,18 @@ export default async function MovieDetail({params:params}:params) {
             </div>
           }
         </div>
-        
     <div className="bg-black overflow-hidden">
       <h1 className="text-red-500 text-lg md:text-xl ml-2 font-semibold">Similar Movies</h1>
     <div className="w-screen flex md:gap-6 gap-1 Trending ml-1 mt-2">
       {
-        SimilarMoviesData.map((item:any,id:number)=>{
+        SimilarMoviesData.map((item:similar)=>{
           return(
-            <div key={id}>
+            <div key={item.id}>
+              <Link href={`/MoviesData/SimilarMovies/${item.id}`}>
                 <div className="w-40 h-40 md:w-60 md:h-60">
                 <img className="w-40 h-40 md:h-60 md:w-60 rounded-md hover:contrast-125 contrast-75 duration:200" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="images" />
                 </div>
+              </Link>
             </div>
           )  
         })

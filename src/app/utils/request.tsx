@@ -30,11 +30,18 @@ export const MovieDetails = async(id:string) => {
     return data;
 }
 
+export const FindTv = async(id:string) => {
+    const res = await fetch(`${BASE_URL}/tv/${id}?api_key=${API_KEY}`)
+    const data = await res.json();
+    return data;
+}
+
 export const SimilarMovies = async(id:string) => {
     const res = await fetch(`${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}`);
     const data = await res.json();
     return data.results;
 }
+
 export const Popular = async() => {
     const res = await fetch(`${BASE_URL}/list/8280176-latest-movies?api_key=${API_KEY}`);
     const data = await res.json();

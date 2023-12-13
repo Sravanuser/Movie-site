@@ -35,7 +35,7 @@ export default async function Page() {
           {data.map((item, id: number) => {
             return (
               <div key={id} className="m-0 p-0">
-                <Link href={`/Movies/${item.id}`}>
+                <Link href={`/MoviesData/Movies/${item.id}`}>
                 <div>
                   <Image
                     src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
